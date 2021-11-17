@@ -18,9 +18,9 @@ const FeedScreen = ({navigation}) => {
           Tab 2の「Feed」に遷移する
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={()=>{navigation.navigate('タブ2', {screen:"Notification"})}}  style={{padding:10}}>
+      <TouchableOpacity onPress={()=>{navigation.navigate('タブ2', {screen:"Notification", params: { title: 'パラメータX' }})}}  style={{padding:10}}>
         <Text>
-          Tab 2の「Notification」に遷移する
+          Tab 2の「Notification」にパラメータをもって遷移する
         </Text>
       </TouchableOpacity>
     </View>
