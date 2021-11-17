@@ -9,8 +9,8 @@ const FirstTab = ()=> {
   
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Feed" component={FeedScreenOfFirstTab} />
-      <Stack.Screen name="Notification" component={NotificationScreenOfFirstTab} />
+      <Stack.Screen name="FeedScreenOfFirst" component={FeedScreenOfFirstTab} />
+      <Stack.Screen name="NotificationScreenOfFirst" component={NotificationScreenOfFirstTab} />
     </Stack.Navigator>
   );
 }

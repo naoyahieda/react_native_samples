@@ -1,5 +1,5 @@
 # 1. Gitからブランチを指定してclone
-`git clone -b react-navigation-stack-screen https://github.com/naoyahieda/react_native_samples.git`
+`git clone -b react-navigation-stack-reset https://github.com/naoyahieda/react_native_samples.git`
 
 # 2. cdする
 `cd react_native_samples`

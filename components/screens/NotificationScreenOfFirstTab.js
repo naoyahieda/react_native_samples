@@ -4,13 +4,13 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { CommonActions } from '@react-navigation/native'
 import styles from './styles'
 
-const NotificationScreen = ({ navigation }) => {
+const NotificationScreenOfFirstTab = ({ navigation }) => {
 
   // タブ2のFeedに遷移する際、タブ1のNavigation stackをリセット
-  const resetAction = CommonActions.reset({
+  const resetActionOfFeed = CommonActions.reset({
     index: 1,
     routes: [
-      { name: 'Feed' }
+      { name: 'FeedScreenOfFirst' }
     ]
   })
 
@@ -23,13 +23,24 @@ const NotificationScreen = ({ navigation }) => {
       </View>
       <TouchableOpacity
         onPress={() => {
-          navigation.dispatch(resetAction)
-          navigation.navigate('タブ2', { screen: "Feed" })
+          navigation.dispatch(resetActionOfFeed)
+          navigation.navigate('タブ2', { screen: "FeedScreenOfSecond" })
         }}
         style={{ padding: 10 }}>
         <View style={styles.button}>
           <Text>
-            Tab 2の「Feed」に遷移する
+            Navigation stackをリセットし、Tab 2の「Feed」に遷移する
+          </Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('タブ2', { screen: "NotificationScreenOfSecond" })
+        }}
+        style={{ padding: 10 }}>
+        <View style={styles.button}>
+          <Text>
+            Navigation stackをリセットせず、Tab 2の「Notification」に遷移する
           </Text>
         </View>
       </TouchableOpacity>
@@ -37,4 +48,4 @@ const NotificationScreen = ({ navigation }) => {
   )
 }
 
-export default NotificationScreen
+export default NotificationScreenOfFirstTab
