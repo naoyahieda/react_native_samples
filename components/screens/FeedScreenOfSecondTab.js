@@ -8,11 +8,7 @@ const FeedScreen = ({ navigation }) => {
   return (
     <View style={{ padding: 30 }}>
       <View style={styles.activeTextView}>
-        <Text style={styles.activeText}>
-          <Text>Tab 2の「Feed」です。{"\n"}</Text>
-          <Text>{"\n"}</Text>
-          <Text>Navigation stackをリセットしたので、Tab 1に戻ると「Feed」が出ると思います。</Text>
-        </Text>
+        <Text style={styles.activeText}>Tab 2の「Feed」です。</Text>
       </View>
       <TouchableOpacity onPress={() => { navigation.navigate("Notification") }} style={{ padding: 10 }}>
         <View style={styles.button}>
