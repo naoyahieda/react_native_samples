@@ -9,8 +9,8 @@ const SecondTab = ()=> {
   
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Feed" component={FeedScreenOfSecondTab} />
-      <Stack.Screen name="Notification" component={NotificationScreenOfSecondTab}/>
+      <Stack.Screen name="FeedScreenOfSecond" component={FeedScreenOfSecondTab} />
+      <Stack.Screen name="NotificationScreenOfSecond" component={NotificationScreenOfSecondTab}/>
     </Stack.Navigator>
   );
 }
