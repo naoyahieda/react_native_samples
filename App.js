@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
 
-export default function App() {
+import FirstTab from "./components/tabs/FirstTab"
+import SecondTab from "./components/tabs/SecondTab"
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+const Tab = createBottomTabNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+      <NavigationContainer>
+        <Tab.Navigator tabBarOptions={{ activeTintColor: "#611F69" }}>
+          <Tab.Screen 
+            name='タブ1' 
+            component={FirstTab} 
+            options={{headerShown:false, tabBarIcon: ({ size,color }) => (<MaterialCommunityIcons name="apple" color={color} size={size} />)}} 
+          />
+          <Tab.Screen 
+            name='タブ2' 
+            component={SecondTab} 
+            options={{headerShown:false, tabBarIcon: ({ size,color }) => (<MaterialCommunityIcons name="android" color={color} size={size} />)}} 
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
