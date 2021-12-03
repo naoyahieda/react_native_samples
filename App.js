@@ -7,21 +7,21 @@ import * as Haptics from 'expo-haptics';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Haptics.selectionAsync</Text>
+      <Text style={styles.text}>選択ボタンを押す時(Haptics.selectionAsync)</Text>
       <View style={styles.buttonContainer}>
-        <Button title='Selection' onPress={() => Haptics.selectionAsync() } />
+        <Button title='選択ボタン' onPress={() => Haptics.selectionAsync() } type="outline"/>
       </View>
-      <Text style={styles.text}>Haptics.notificationAsync</Text>
+      <Text style={styles.text}>結果に応じた使い分け(Haptics.notificationAsync)</Text>
       <View style={styles.buttonContainer}>
-        <Button title='Success' onPress={() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success) } />
-        <Button title='Error' onPress={() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error) } />
-        <Button title='Warning' onPress={() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning) } />
+        <Button color = "green" title='成功' onPress={() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success) } />
+        <Button color = "red" title='エラー' onPress={() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error) } />
+        <Button color = "orange" title='注意' onPress={() => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning) } />
       </View>
-      <Text style={styles.text}>Haptics.impactAsync</Text>
+      <Text style={styles.text}>強さを調節する(Haptics.impactAsync)</Text>
       <View style={styles.buttonContainer}>
-        <Button title='Light' onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light) } />
-        <Button title='Medium' onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium) } />
-        <Button title='Heavy' onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy) } />
+        <Button title='軽め' onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light) } />
+        <Button title='中くらい' onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium) } />
+        <Button title='重め' onPress={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy) } />
       </View>
     </View>
   );
@@ -40,4 +40,5 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     justifyContent: 'space-between'
   },
+  
 });
